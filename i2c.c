@@ -11,8 +11,6 @@ static uint16_t address = 0;
 
 void i2c_init(void)
 {
-    TWBR = 0x08;
-    TWSR = 0x00;
     TWAR = (SLAVE_ADDRESS << 1);
     TWCR = (1<<TWEA) | (1<<TWEN) | (1<<TWIE);
 }

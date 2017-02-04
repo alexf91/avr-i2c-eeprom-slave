@@ -11,6 +11,5 @@ needs to provide two functions:
 I've only tested it with `eeprog` on a Raspberry Pi. `eeprog` only reads and writes
 one byte at a time, so the rest is pretty much untested.
 
-If you encounter transmission errors, try reducing the speed of the interface on both
-the AVR and the master. On the AVR, this can be done by editing the prescaler and
-bitrate register in the init function in [i2c.c](i2c.c).
+If you encounter transmission errors, try reducing the speed of the interface on the
+master.
