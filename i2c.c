@@ -77,5 +77,9 @@ ISR(TWI_vect)
         case TW_ST_ARB_LOST_SLA_ACK:
         case TW_ST_LAST_DATA:
             break;
+
+        default:
+            TWCR = (1<<TWINT) | (1<<TWSTO) | (1<<TWEA) | (1<<TWEN) | (1<<TWIE);
+            break;
     }
 }
