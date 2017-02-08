@@ -22,7 +22,7 @@ SIZE = avr-size
 DEFINES  = -DF_CPU=$(F_CPU) -DSLAVE_ADDRESS=$(SLAVE_ADDRESS)
 DEFINES += -DBOOT_DELAY_MS=$(BOOT_DELAY_MS) -DBOOT_IDLE_MS=$(BOOT_IDLE_MS)
 
-CFLAGS = $(DEFINES) -Os -std=gnu11 -mmcu=$(MCU) -Wall -I/usr/avr/include -I..
+CFLAGS = $(DEFINES) -Os -std=gnu11 -mmcu=$(MCU) -Wall -I/usr/avr/include -I../..
 OBJECTS = bootloader.o i2c.o
 
 LDFLAGS  = -mmcu=$(MCU) -Ttext=$(BOOTLOADER_SECTION)
@@ -36,7 +36,7 @@ all: libraries $(PROJECT).hex
 %.o: %.c
 	$(CC) $(CFLAGS) -c $<
 
-%.o: ../%.c
+%.o: ../../%.c
 	$(CC) $(CFLAGS) -c $<
 
 $(PROJECT).elf: $(OBJECTS) $(LIBS)
