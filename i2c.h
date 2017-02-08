@@ -11,5 +11,6 @@ extern void eeprom_wr_callback(uint16_t address, uint8_t data);
 extern uint8_t eeprom_rd_callback(uint16_t address);
 
 void i2c_init(void);
+void i2c_deinit(void);
 
 #endif /* I2C_H */

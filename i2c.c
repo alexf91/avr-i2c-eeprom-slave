@@ -15,6 +15,12 @@ void i2c_init(void)
     TWCR = (1<<TWEA) | (1<<TWEN) | (1<<TWIE);
 }
 
+void i2c_deinit(void)
+{
+    TWAR = 0x00;
+    TWCR = 0x00;
+}
+
 
 ISR(TWI_vect)
 {
